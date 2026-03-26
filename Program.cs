@@ -28,6 +28,11 @@ namespace FitVisionAI
             
             string feedback = analyzer.Analyze(currentExercise);
             Console.WriteLine($"[AI Аналіз]: {feedback}");
+
+
+            CalorieCalculator calc = new CalorieCalculator();
+            double burned = calc.CalculateCaloriesBurned(75.5, 30);
+            Console.WriteLine($"[AI Калькулятор]: Ви спалили {burned} калорій.");
         }
     }
 }
