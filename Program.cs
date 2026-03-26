@@ -2,12 +2,32 @@
 
 namespace FitVisionAI
 {
+    class PostureAnalyzer
+    {
+        public string Analyze(string exerciseName)
+        {
+            // Імітація роботи ШІ для аналізу кутів нахилу тіла
+            if (exerciseName.ToLower() == "присідання")
+            {
+                return "Спина рівна, кут згину колін оптимальний. Техніка правильна!";
+            }
+            return "Вправа розпізнається... Тримайте поставу.";
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("=== Ініціалізація системи FitVision-AI ===");
-            Console.WriteLine("Модуль аналізу постави успішно завантажено.");
+            Console.WriteLine("=== FitVision-AI: Тренування розпочато ===");
+            
+            PostureAnalyzer analyzer = new PostureAnalyzer();
+            string currentExercise = "Присідання";
+            
+            Console.WriteLine($"Поточна вправа: {currentExercise}");
+            
+            string feedback = analyzer.Analyze(currentExercise);
+            Console.WriteLine($"[AI Аналіз]: {feedback}");
         }
     }
 }
