@@ -7,6 +7,8 @@
 - Email: denys.potsebin@nure.ua
 - Волошин Роман, група ПЗПІ-25-1
 - Email: roman.voloshyn1@nure.ua
+- Сарібегян Арсен, група ПЗПІ-25-1
+- Email: arsen.saribehian@nure.ua 
 
 ## Технології
 - Мова програмування: C# (.NET 8.0)
