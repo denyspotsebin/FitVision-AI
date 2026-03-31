@@ -23,37 +23,24 @@ namespace FitVisionAI.Controllers
         /// Повертає список усіх збережених генерацій для поточного авторизованого користувача.
         /// </summary>
         [HttpGet("/api/history")]
-        public IActionResult GetUserHistory()
+        public IActionResult GetUserHistory([FromQuery] string query = null)
         {
-            // TODO: Отримати реальний ID користувача з токена авторизації (наприклад, з User.Claims)
-            string currentUserId = "user_12345"; 
+            string currentUserId = "user_12345";
 
-            // Тимчасова заглушка (Mock-дані) замість звернення до реальної бази даних
             var mockHistory = new List<GenerationRecord>
             {
-                new GenerationRecord 
-                { 
-                    Id = "gen_001", 
-                    ResultImageUrl = "https://fitvision-ai.com/images/res_001.jpg", 
-                    TargetPhysique = "Рельєф", 
-                    CreatedAt = DateTime.UtcNow.AddDays(-2) 
-                },
-                new GenerationRecord 
-                { 
-                    Id = "gen_002", 
-                    ResultImageUrl = "https://fitvision-ai.com/images/res_002.jpg", 
-                    TargetPhysique = "Набір маси", 
-                    CreatedAt = DateTime.UtcNow.AddHours(-5) 
-                }
+                new GenerationRecord { Id = "gen_001", ResultImageUrl = "res_001.jpg", TargetPhysique = "Рельєф", CreatedAt = DateTime.UtcNow.AddDays(-2) },
+                new GenerationRecord { Id = "gen_002", ResultImageUrl = "res_002.jpg", TargetPhysique = "Набір маси", CreatedAt = DateTime.UtcNow.AddHours(-5) }
             };
 
-            // Головна логіка: фільтруємо по юзеру (в майбутньому) і СОРТУЄМО ЗА ДАТОЮ (від новіших до старіших)
-            var sortedHistory = mockHistory
-                .OrderByDescending(record => record.CreatedAt)
-                .ToList();
+            // Додаємо логіку пошуку за ключовим словом
+            var results = mockHistory.AsQueryable();
+            if (!string.IsNullOrEmpty(query))
+            {
+                results = results.Where(r => r.TargetPhysique.Contains(query, StringComparison.OrdinalIgnoreCase));
+            }
 
-            // Повертаємо HTTP 200 OK та JSON із даними
-            return Ok(sortedHistory);
+            return Ok(results.OrderByDescending(record => record.CreatedAt).ToList());
         }
     }
 }
