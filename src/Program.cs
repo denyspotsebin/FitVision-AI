@@ -19,6 +19,11 @@ namespace FitVisionAI
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("=== Вітаємо у FitVision-AI ===");
+            
+            RegistrationForm registrationForm = new RegistrationForm();
+            registrationForm.RunRegistration();
+            
             Console.WriteLine("=== FitVision-AI: Тренування розпочато ===");
             
             PostureAnalyzer analyzer = new PostureAnalyzer();
