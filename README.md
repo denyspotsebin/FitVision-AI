@@ -5,7 +5,8 @@
 ## Автор
 - Поцебін Денис, група ПЗПІ-25-1
 - Email: denys.potsebin@nure.ua
-
+- Волошин Роман, група ПЗПІ-25-1
+- Email: roman.voloshyn1@nure.ua
 
 ## Технології
 - Мова програмування: C# (.NET 8.0)
@@ -16,8 +17,8 @@
 ## Встановлення та запуск
 ```bash
 git clone [https://github.com/](https://github.com/)denyspotsebin/FitVision-AI.git
-cd bse-lr1-potsebin
-dotnet run
+cd FitVision-AI
+dotnet run --project src
 
 ## Ліцензія
 MIT License
