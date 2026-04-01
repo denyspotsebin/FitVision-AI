@@ -13,9 +13,9 @@ namespace FitVisionAI.Controllers
         // Модель даних для відображення однієї генерації
         public class GenerationRecord
         {
-            public string Id { get; set; }
-            public string ResultImageUrl { get; set; }
-            public string TargetPhysique { get; set; }
+            public string Id { get; set; } = string.Empty;
+            public string ResultImageUrl { get; set; } = string.Empty;
+            public string TargetPhysique { get; set; } = string.Empty;
             public DateTime CreatedAt { get; set; }
         }
 
@@ -23,9 +23,10 @@ namespace FitVisionAI.Controllers
         /// Повертає список усіх збережених генерацій для поточного авторизованого користувача.
         /// </summary>
         [HttpGet("/api/history")]
-        public IActionResult GetUserHistory([FromQuery] string query = null)
+        public IActionResult GetUserHistory([FromQuery] string? query = null)
         {
             string currentUserId = "user_12345";
+            Console.WriteLine($"[Debug] Авторизовано користувача: {currentUserId}");
 
             var mockHistory = new List<GenerationRecord>
             {

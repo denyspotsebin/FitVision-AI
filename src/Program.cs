@@ -36,18 +36,21 @@ namespace FitVisionAI
 
 
     CalorieCalculator calc = new CalorieCalculator();
-            double burned = calc.CalculateCaloriesBurned(75.5, 30);
-            Console.WriteLine($"[AI Калькулятор]: Ви спалили {burned} калорій.");
+    
+Console.WriteLine("\n=== Розрахунок індивідуальної норми води ===");
+            
+            Console.Write("Введіть вашу вагу (кг): ");
+            string? weightInput = Console.ReadLine();
+            double userWeight = double.Parse(weightInput ?? "0");
 
-            Console.WriteLine("\n=== Розрахунок норми води ===");
+            Console.Write("Скільки годин тривало тренування? ");
+            string? workoutInput = Console.ReadLine();
+            double userWorkout = double.Parse(workoutInput ?? "0");
+
+            double finalWater = WaterIntakeCalculator.CalculateDailyWaterIntake(userWeight, userWorkout); 
             
-            double waterNorm = WaterIntakeCalculator.CalculateDailyWaterIntake(75.5, 1.5); 
-            
-            Console.WriteLine($"[AI Калькулятор]: Ваша денна норма води становить {waterNorm} літрів.");
-            
-            Console.WriteLine($"[AI Калькулятор]: Ваша денна норма води становить {waterNorm} літрів.");
-            
-            Console.WriteLine($"[AI Калькулятор]: Ваша денна норма води становить {waterNorm} літрів.");
+            Console.WriteLine($"\n[Результат]: Ваша денна норма води — {finalWater} літрів.");
+
         } 
-    }
+    } 
 } 
