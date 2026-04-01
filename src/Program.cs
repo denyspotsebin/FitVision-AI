@@ -1,5 +1,5 @@
 ﻿using System;
-
+using FitVisionAI.Utils;
 namespace FitVisionAI
 {
     class PostureAnalyzer
@@ -35,9 +35,17 @@ namespace FitVisionAI
             Console.WriteLine($"[AI Аналіз]: {feedback}");
 
 
-            CalorieCalculator calc = new CalorieCalculator();
+CalorieCalculator calc = new CalorieCalculator();
             double burned = calc.CalculateCaloriesBurned(75.5, 30);
             Console.WriteLine($"[AI Калькулятор]: Ви спалили {burned} калорій.");
-        }
+
+            
+            Console.WriteLine("\n=== Розрахунок норми води ===");
+            WaterIntakeCalculator waterCalc = new WaterIntakeCalculator();
+            
+            double waterNorm = waterCalc.Calculate(75.5, 1.5); 
+            
+            Console.WriteLine($"[AI Калькулятор]: Ваша денна норма води становить {waterNorm} літрів.");
+        } 
     }
-}
+} 
