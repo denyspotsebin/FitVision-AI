@@ -1,0 +1,44 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+
+class Account {
+  - ipAddress : String
+  + connect() : void
+}
+
+class User {
+  - userId : int
+  - email : String
+  - passwordHash : String
+  + login() : boolean
+  + register() : void
+}
+
+class AuthService {
+  - tokenSecret : String
+  + authenticate(email : String, pass : String) : boolean
+  + validateToken(token : String) : boolean
+}
+
+class Profile {
+  - profileId : int
+  - createdAt : Date
+  + updateProfile() : void
+}
+
+class Photo {
+  - photoId : String
+  - url : String
+  - fileSize : float
+  + upload() : boolean
+  + validateQuality() : boolean
+}
+
+
+Account <|-- User : Наслідування
+User "1" *-- "1" Profile : Композиція
+Profile "1" o-- "0..*" Photo : Агрегація
+User ..> AuthService : Залежність
+
+@enduml
