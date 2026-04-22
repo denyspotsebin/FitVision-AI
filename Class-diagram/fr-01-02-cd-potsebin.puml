@@ -1,4 +1,4 @@
-@startuml
+@startuml FR-01-02-ClassDiagram
 
 skinparam classAttributeIconSize 0
 
