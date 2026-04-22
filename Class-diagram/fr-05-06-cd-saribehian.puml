@@ -1,0 +1,39 @@
+@startuml FR-05-06-ClassDiagram
+class User {
+  - userId : Guid
+  - email : String
+  - username : String
+  + getProfileInfo() : String
+}
+
+class Transformation {
+  - transformationId : Guid
+  - dateCreated : DateTime
+  - imageUrl : String
+  - parameters : String
+  + getDetails() : String
+}
+
+interface IHistoryService {
+  + saveTransformation(userId: Guid, t: Transformation) : boolean
+  + getUserHistory(userId: Guid) : List<Transformation>
+}
+
+class HistoryService {
+  - dbContext : DatabaseContext
+  + saveTransformation(userId: Guid, t: Transformation) : boolean
+  + getUserHistory(userId: Guid) : List<Transformation>
+}
+
+class DatabaseContext {
+  - connectionString : String
+  + insert(obj: Object) : void
+  + query(sql: String) : List<Object>
+}
+
+User "1" o-- "*" Transformation : має (Агрегація)
+IHistoryService <|.. HistoryService : реалізує
+HistoryService "1" *-- "1" DatabaseContext : містить (Композиція)
+HistoryService ..> User : використовує
+HistoryService ..> Transformation : управляє
+@enduml
