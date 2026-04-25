@@ -1,0 +1,44 @@
+@startuml
+skinparam shadowing false
+skinparam sequenceMessageAlign center
+skinparam ParticipantPadding 40
+
+actor "Користувач" as U #White
+participant ":TargetParameters" as TP #GhostWhite
+participant ":AIGeneratorService" as AI #GhostWhite
+participant "req:TransformationRequest" as TR #GhostWhite
+participant "res:GeneratedResult" as GR #GhostWhite
+
+U -> TP : validateData()
+activate TP
+TP --> U : true
+deactivate TP
+
+U -> AI : checkAvailableLimits(userId)
+activate AI
+AI --> U : true
+deactivate AI
+
+alt [limits == true]
+    U -> TR : new TransformationRequest(photo, params)
+    activate TR
+    TR --> U : req
+    
+    U -> TR : executeRequest()
+    TR -> AI : generateTransformation(photo, params)
+    activate AI
+    
+    AI -> GR : new GeneratedResult(resultFilepath)
+    activate GR
+    GR --> AI : res
+    deactivate GR
+    
+    AI --> U : відобразити фото (FR-04)
+    deactivate AI
+    deactivate TR
+else [ліміт вичерпано]
+    U <-- AI : "Помилка: Ліміт вичерпано"
+    activate AI
+    deactivate AI
+end
+@enduml

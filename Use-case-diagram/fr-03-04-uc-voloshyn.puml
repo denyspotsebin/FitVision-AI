@@ -1,0 +1,32 @@
+@startuml
+left to right direction
+
+actor "Користувач" as User
+actor "AI-сервіс" as AIService <<actor>>
+
+rectangle "Система FitVision-AI" {
+    usecase "Введення цільових параметрів\n(FR-03)" as UC03
+    usecase "Перевірка валідності даних" as UC_Validate
+
+    usecase "Генерація AI-зображення\n(FR-04)" as UC04
+    usecase "Перевірка доступних лімітів" as UC_Limits
+    usecase "Зберегти результат генерації" as UC_Save
+}
+
+User --> UC03
+User --> UC04
+
+' Включення обов'язкових перевірок
+UC03 ..> UC_Validate : <<include>>
+UC04 ..> UC_Limits : <<include>>
+
+' Генерація включає попереднє введення цілей
+UC04 ..> UC03 : <<include>>
+
+' Розширення: після генерації можна зберегти результат
+UC_Save .up.> UC04 : <<extend>>
+
+' Зовнішній актор, що виконує роботу
+UC04 <-- AIService
+
+@enduml
