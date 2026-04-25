@@ -1,0 +1,61 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class User {
+  - userId: int
+  - email: String
+  + setTargetParameters(params: TargetParameters): void
+  + createRequest(photo: BasePhoto): TransformationRequest
+}
+
+class TargetParameters {
+  - desiredWeight: float
+  - targetBMI: float
+  - bodyFatPercentage: float
+  - muscleMass: float
+  + validateData(): boolean
+}
+
+class ImageResource {
+  # resourceId: int
+  # filepath: String
+  # resolution: String
+  + getFileInfo(): String
+}
+
+class BasePhoto {
+  - isQualityGood: boolean
+  + analyzeLighting(): boolean
+}
+
+class GeneratedResult {
+  - createdAt: Date
+  + saveToHistory(): void
+}
+
+class TransformationRequest {
+  - requestId: int
+  - status: String
+  + executeRequest(): void
+}
+
+class AIGeneratorService {
+  + generateTransformation(photo: BasePhoto, goals: TargetParameters): GeneratedResult
+}
+
+' Зв'язки з підписами точно як у дужках завдання
+ImageResource <|-- BasePhoto : наслідування
+ImageResource <|-- GeneratedResult : наслідування
+
+User "1" *-- "1" TargetParameters : композиція >
+
+User "1" -- "*" TransformationRequest : асоціація >
+TransformationRequest "1" -- "0..1" GeneratedResult : асоціація >
+
+TransformationRequest "1" o-- "1" BasePhoto : агрегація >
+TransformationRequest "1" o-- "1" TargetParameters : агрегація >
+
+' Залежність (тимчасове використання сервісу)
+TransformationRequest ..> AIGeneratorService : залежність >
+
+@enduml
