@@ -1,0 +1,32 @@
+@startuml fr-07-sd-bondar
+
+skinparam style strictuml
+actor "Користувач" as User
+participant "Система FitVision-AI" as System
+database "База Даних" as DB
+participant "Notification Service" as Notify
+
+System -> DB : Перевірка готовності аналізу
+activate DB
+DB --> System : Дані оброблені (status: ready)
+deactivate DB
+
+System -> DB : Запит налаштувань сповіщень (userId)
+activate DB
+DB --> System : status: enabled
+deactivate DB
+
+alt сповіщення увімкнено
+    System -> Notify : Створити сповіщення (userId, message)
+    activate Notify
+    Notify -> User : Надсилання Push/Email (FR-07)
+    Notify --> System : Підтвердження доставки
+    deactivate Notify
+    
+    System -> DB : Оновити статус повідомлення (sent)
+else сповіщення вимкнено
+    System -> DB : Логування події (skip notification)
+end
+
+System --> User : Відобразити результат в інтерфейсі
+@enduml
