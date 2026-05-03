@@ -1,0 +1,50 @@
+@startuml FR-07-08-ClassDiagram
+
+skinparam classAttributeIconSize 0
+
+class Account {
+  - ipAddress : String
+  - lastLogin : Date
+  + connect() : void
+}
+
+class User {
+  - userId : int
+  - email : String
+  + updateProfile() : void
+}
+
+class Admin {
+  - adminLevel : int
+  + manageUser(userId : int) : void
+  + moderateContent(contentId : int) : boolean
+}
+
+class FitnessData {
+  - dataId : int
+  - weight : float
+  - bodyFat : float
+  - date : Date
+  + validateData() : boolean
+}
+
+class NotificationService {
+  - apiKey : String
+  + sendPush(userId : int, msg : String) : boolean
+  + sendEmail(userId : int, msg : String) : boolean
+}
+
+class Notification {
+  - notificationId : int
+  - message : String
+  - isSent : boolean
+  + createMessage() : String
+}
+
+Account <|-- User : Наслідування
+User <|-- Admin : Наслідування
+User "1" *-- "0..*" FitnessData : Композиція
+User "1" o-- "0..*" Notification : Агрегація
+Notification ..> NotificationService : Залежність
+
+@enduml
