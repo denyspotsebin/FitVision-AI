@@ -1,0 +1,32 @@
+@startuml
+left to right direction
+
+actor "Користувач" as User
+actor "Адміністратор" as Admin
+actor "Notification Service" as Notify <<actor>>
+
+rectangle "Система FitVision-AI" {
+    usecase "Завантаження фітнес-даних\n(FR-03)" as UC03
+    usecase "Аналіз прогресу через AI" as UC_AI_Analysis
+    usecase "Валідація вхідних даних" as UC_Validate
+    
+    usecase "Оримання сповіщень\n(FR-07)" as UC07
+    usecase "Нагадування про тренування" as UC_Reminder
+    
+    usecase "Керування користувачами\n(FR-08)" as UC08
+    usecase "Модерація AI-контенту" as UC_Mod
+}
+
+User --> UC03
+User --> UC07
+
+Admin --> UC08
+Admin --> UC_Mod
+
+UC03 ..> UC_Validate : <<include>>
+UC_AI_Analysis ..> UC03 : <<include>>
+
+UC07 <.. UC_Reminder : <<extend>>
+UC07 -- Notify
+
+@enduml
