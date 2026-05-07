@@ -7,7 +7,7 @@
 
 ## 2. Вихідний код реалізованого модуля з коментарями
 Код містить нетривіальну логіку (умови, цикли, винятки) та задокументований.
-* **Посилання на файл `Program.cs`:** [https://github.com/denyspotsebin/FitVision-AI/tree/main/лб3/Potsebin/Porogram.cs]
+* **Посилання на файл `Program.cs`:** [https://github.com/denyspotsebin/FitVision-AI/blob/feature/lb3-potsebin/%D0%9B%D0%913/Potsebin/Program.cs]
 
 ## 3. Таблиця проєктування тестів
 
@@ -26,12 +26,12 @@
 
 ## 4. Вихідний код тестового набору з коментарями
 Тести написані з використанням фреймворку xUnit та патерну AAA.
-* **Посилання на файл `UnitTest1.cs`:** [https://github.com/denyspotsebin/FitVision-AI/tree/main/лб3/Potsebin/FitVisionTests/UnitTest1.cs]
+* **Посилання на файл `UnitTest1.cs`:** [https://github.com/denyspotsebin/FitVision-AI/blob/feature/lb3-potsebin/%D0%9B%D0%913/Potsebin/FitVisionTests/UnitTest1.cs]
 
 ## 5. Світлина звіту покриття коду (Line Coverage)
-![Звіт покриття коду перша спроба](FirstTest.png)
+![Звіт покриття коду перша спроба](FirstTest.jpg)
 
-![Звіт покриття коду друга спроба, досягнення 98% покритя](Second.png)
+![Звіт покриття коду друга спроба, досягнення 98% покритя](Second.jpg)
 
 ## 6. Висновки
 Під час виконання лабораторної роботи було успішно реалізовано UML-модель мовою C# та покрито тестами **98%** коду. 
