@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
+
 
 namespace FitVisionAI_LB3
 {
@@ -158,7 +160,9 @@ namespace FitVisionAI_LB3
             return authService.Authenticate(email, pass);
         }
     }
-
+    
+    
+    [ExcludeFromCodeCoverage]
     class Program
     {
         static void Main(string[] args)

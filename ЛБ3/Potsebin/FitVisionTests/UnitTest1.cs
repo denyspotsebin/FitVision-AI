@@ -110,8 +110,64 @@ namespace FitVisionTests
         {
             var auth = new AuthService();
             var user = new User(3, "invalid@emailcom", auth);
-            
+
             Assert.Throws<FormatException>(() => user.Register());
+        }
+        [Fact]
+        public void Connect_ExecutesSuccessfully()
+        {
+            var account = new Account();
+            account.Connect();
+            Assert.NotNull(account); 
+        }
+
+        [Fact]
+        public void ValidateToken_CorrectToken_ReturnsTrue()
+        {
+            var auth = new AuthService();
+            bool result = auth.ValidateToken("secret_key_123");
+            Assert.True(result);
+        }
+
+        [Fact]
+        public void Upload_ValidPhoto_ReturnsTrue()
+        {
+            var photo = new Photo("5", "test.jpg", 5.0f);
+            bool result = photo.Upload();
+            Assert.True(result);
+        }
+
+        [Fact]
+        public void Login_ValidCredentials_ReturnsTrue()
+        {
+            var auth = new AuthService();
+            var user = new User(1, "user@fitvision.com", auth);
+            bool result = user.Login("qwerty");
+            Assert.True(result);
+        }
+
+        [Fact]
+        public void Profile_UpdateProfile_ExecutesSuccessfully()
+        {
+            var profile = new Profile(1);
+            profile.UpdateProfile();
+            Assert.NotNull(profile);
+        }
+
+        [Fact]
+        public void Upload_ExceedsSize_CatchesExceptionAndReturnsFalse()
+        {
+            var photo = new Photo("6", "test.jpg", 50.0f);
+            bool result = photo.Upload();
+            Assert.False(result);
+        }
+
+        [Fact]
+        public void ValidateQuality_OtherFormat_ReturnsTrue()
+        {
+            var photo = new Photo("7", "test.bmp", 5.0f);
+            bool result = photo.ValidateQuality();
+            Assert.True(result); 
         }
     }
 }
