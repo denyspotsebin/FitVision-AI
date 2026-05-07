@@ -8,7 +8,7 @@
 ## 2. Вихідний код реалізованого модуля з коментарями
 Код містить нетривіальну логіку (умови, цикли, винятки) та задокументований.
 * **Посилання на файл `Program.cs`:** [https://github.com/denyspotsebin/FitVision-AI/blob/feature/lb3-potsebin/%D0%9B%D0%913/Potsebin/Program.cs]
-
+* **Посилання на діаграму класів з ЛБ№2:** [https://github.com/denyspotsebin/FitVision-AI/blob/main/Class-diagram/fr-01-02-cd-potsebin.png]
 ## 3. Таблиця проєктування тестів
 
 | Тест-кейс (Що тестуємо) | Вхідні дані | Очікуваний результат | Техніка | Статус |
