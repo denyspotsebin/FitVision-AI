@@ -1,0 +1,447 @@
+{
+  "Potsebin.dll": {
+    "C:\\OPI\\лб3\\Potsebin\\Program.cs": {
+      "FitVisionAI_LB3.Account": {
+        "System.Void FitVisionAI_LB3.Account::Connect()": {
+          "Lines": {
+            "10": 0,
+            "11": 0,
+            "12": 0,
+            "13": 0
+          },
+          "Branches": []
+        }
+      },
+      "FitVisionAI_LB3.AuthService": {
+        "System.Boolean FitVisionAI_LB3.AuthService::Authenticate(System.String,System.String)": {
+          "Lines": {
+            "21": 4,
+            "22": 4,
+            "24": 4,
+            "25": 2,
+            "26": 2,
+            "29": 2,
+            "30": 1,
+            "31": 1,
+            "32": 1,
+            "35": 1,
+            "36": 1,
+            "37": 2
+          },
+          "Branches": [
+            {
+              "Line": 24,
+              "Offset": 18,
+              "EndOffset": 20,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 3
+            },
+            {
+              "Line": 24,
+              "Offset": 18,
+              "EndOffset": 28,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 24,
+              "Offset": 31,
+              "EndOffset": 33,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 2
+            },
+            {
+              "Line": 24,
+              "Offset": 31,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            },
+            {
+              "Line": 29,
+              "Offset": 56,
+              "EndOffset": 58,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 2
+            },
+            {
+              "Line": 29,
+              "Offset": 56,
+              "EndOffset": 71,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 29,
+              "Offset": 74,
+              "EndOffset": 76,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 1
+            },
+            {
+              "Line": 29,
+              "Offset": 74,
+              "EndOffset": 92,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Boolean FitVisionAI_LB3.AuthService::ValidateToken(System.String)": {
+          "Lines": {
+            "40": 0,
+            "41": 0,
+            "42": 0
+          },
+          "Branches": []
+        },
+        "System.Void FitVisionAI_LB3.AuthService::.ctor()": {
+          "Lines": {
+            "18": 7
+          },
+          "Branches": []
+        }
+      },
+      "FitVisionAI_LB3.Profile": {
+        "System.Collections.Generic.List`1<FitVisionAI_LB3.Photo> FitVisionAI_LB3.Profile::get_Photos()": {
+          "Lines": {
+            "49": 1
+          },
+          "Branches": []
+        },
+        "System.Void FitVisionAI_LB3.Profile::UpdateProfile()": {
+          "Lines": {
+            "58": 0,
+            "59": 0,
+            "60": 0
+          },
+          "Branches": []
+        },
+        "System.Void FitVisionAI_LB3.Profile::.ctor(System.Int32)": {
+          "Lines": {
+            "51": 1,
+            "52": 1,
+            "53": 1,
+            "54": 1,
+            "55": 1
+          },
+          "Branches": []
+        }
+      },
+      "FitVisionAI_LB3.Photo": {
+        "System.Boolean FitVisionAI_LB3.Photo::Upload()": {
+          "Lines": {
+            "77": 0,
+            "79": 0,
+            "80": 0,
+            "81": 0,
+            "82": 0,
+            "83": 0,
+            "85": 0,
+            "87": 0,
+            "88": 0,
+            "89": 0,
+            "90": 0,
+            "92": 0
+          },
+          "Branches": [
+            {
+              "Line": 80,
+              "Offset": 10,
+              "EndOffset": 12,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 80,
+              "Offset": 10,
+              "EndOffset": 44,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Boolean FitVisionAI_LB3.Photo::ValidateQuality()": {
+          "Lines": {
+            "95": 4,
+            "96": 4,
+            "98": 4,
+            "99": 1,
+            "100": 1,
+            "103": 3,
+            "104": 1,
+            "105": 1,
+            "108": 2,
+            "109": 0,
+            "110": 0,
+            "111": 0,
+            "113": 2,
+            "114": 2,
+            "115": 2
+          },
+          "Branches": [
+            {
+              "Line": 98,
+              "Offset": 30,
+              "EndOffset": 32,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 98,
+              "Offset": 30,
+              "EndOffset": 44,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            },
+            {
+              "Line": 103,
+              "Offset": 59,
+              "EndOffset": 61,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 103,
+              "Offset": 59,
+              "EndOffset": 73,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            },
+            {
+              "Line": 108,
+              "Offset": 89,
+              "EndOffset": 91,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 108,
+              "Offset": 89,
+              "EndOffset": 112,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 2
+            },
+            {
+              "Line": 108,
+              "Offset": 115,
+              "EndOffset": 117,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 108,
+              "Offset": 115,
+              "EndOffset": 130,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 2
+            }
+          ]
+        },
+        "System.Void FitVisionAI_LB3.Photo::.ctor(System.String,System.String,System.Single)": {
+          "Lines": {
+            "69": 4,
+            "70": 4,
+            "71": 4,
+            "72": 4,
+            "73": 4,
+            "74": 4
+          },
+          "Branches": []
+        }
+      },
+      "FitVisionAI_LB3.User": {
+        "FitVisionAI_LB3.Profile FitVisionAI_LB3.User::get_UserProfile()": {
+          "Lines": {
+            "123": 2
+          },
+          "Branches": []
+        },
+        "System.Void FitVisionAI_LB3.User::Register()": {
+          "Lines": {
+            "134": 3,
+            "135": 3,
+            "137": 3,
+            "138": 3,
+            "140": 85,
+            "141": 38,
+            "142": 40,
+            "143": 41,
+            "144": 38,
+            "146": 3,
+            "147": 2,
+            "148": 2,
+            "151": 1,
+            "152": 1,
+            "153": 1,
+            "154": 1
+          },
+          "Branches": [
+            {
+              "Line": 140,
+              "Offset": 78,
+              "EndOffset": 28,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 38
+            },
+            {
+              "Line": 142,
+              "Offset": 48,
+              "EndOffset": 50,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 142,
+              "Offset": 48,
+              "EndOffset": 52,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 38
+            },
+            {
+              "Line": 143,
+              "Offset": 62,
+              "EndOffset": 64,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 3
+            },
+            {
+              "Line": 143,
+              "Offset": 62,
+              "EndOffset": 66,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 38
+            },
+            {
+              "Line": 140,
+              "Offset": 78,
+              "EndOffset": 80,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 3
+            },
+            {
+              "Line": 146,
+              "Offset": 81,
+              "EndOffset": 83,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 2
+            },
+            {
+              "Line": 146,
+              "Offset": 81,
+              "EndOffset": 89,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 1
+            },
+            {
+              "Line": 146,
+              "Offset": 94,
+              "EndOffset": 96,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 2
+            },
+            {
+              "Line": 146,
+              "Offset": 94,
+              "EndOffset": 108,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Boolean FitVisionAI_LB3.User::Login(System.String)": {
+          "Lines": {
+            "157": 0,
+            "158": 0,
+            "159": 0
+          },
+          "Branches": []
+        },
+        "System.Void FitVisionAI_LB3.User::.ctor(System.Int32,System.String,FitVisionAI_LB3.AuthService)": {
+          "Lines": {
+            "126": 3,
+            "127": 3,
+            "128": 3,
+            "129": 3,
+            "130": 3,
+            "131": 3
+          },
+          "Branches": []
+        }
+      },
+      "FitVisionAI_LB3.Program": {
+        "System.Void FitVisionAI_LB3.Program::Main(System.String[])": {
+          "Lines": {
+            "165": 0,
+            "166": 0,
+            "168": 0,
+            "169": 0,
+            "172": 0,
+            "173": 0,
+            "174": 0,
+            "176": 0,
+            "177": 0,
+            "178": 0,
+            "179": 0,
+            "180": 0,
+            "181": 0,
+            "182": 0,
+            "183": 0,
+            "184": 0,
+            "185": 0,
+            "186": 0,
+            "187": 0,
+            "189": 0,
+            "190": 0
+          },
+          "Branches": [
+            {
+              "Line": 176,
+              "Offset": 59,
+              "EndOffset": 61,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 176,
+              "Offset": 59,
+              "EndOffset": 120,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    }
+  }
+}
