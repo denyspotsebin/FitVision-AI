@@ -1,0 +1,271 @@
+{
+  "Saribehian.dll": {
+    "C:\\Users\\Admin\\OneDrive\\Desktop\\Учеба\\ОПІ\\bse-lr1-Saribehian\\ЛБ3\\Saribehian\\HistoryService.cs": {
+      "FitVision.Services.TransformationRecord": {
+        "System.String FitVision.Services.TransformationRecord::get_UserId()": {
+          "Lines": {
+            "10": 3
+          },
+          "Branches": []
+        },
+        "System.String FitVision.Services.TransformationRecord::get_PhotoUrl()": {
+          "Lines": {
+            "11": 2
+          },
+          "Branches": []
+        },
+        "System.String FitVision.Services.TransformationRecord::get_Result()": {
+          "Lines": {
+            "12": 2
+          },
+          "Branches": []
+        },
+        "System.DateTime FitVision.Services.TransformationRecord::get_CreatedAt()": {
+          "Lines": {
+            "13": 4
+          },
+          "Branches": []
+        }
+      },
+      "FitVision.Services.HistoryService": {
+        "System.Boolean FitVision.Services.HistoryService::SaveTransformation(System.String,System.String,System.String)": {
+          "Lines": {
+            "23": 3,
+            "24": 3,
+            "25": 1,
+            "27": 2,
+            "28": 0,
+            "30": 2,
+            "31": 0,
+            "33": 2,
+            "34": 2,
+            "35": 2,
+            "36": 2,
+            "37": 2,
+            "38": 2,
+            "39": 2,
+            "41": 2,
+            "42": 2,
+            "43": 2
+          },
+          "Branches": [
+            {
+              "Line": 24,
+              "Offset": 9,
+              "EndOffset": 11,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 24,
+              "Offset": 9,
+              "EndOffset": 27,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 27,
+              "Offset": 35,
+              "EndOffset": 37,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 27,
+              "Offset": 35,
+              "EndOffset": 53,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            },
+            {
+              "Line": 30,
+              "Offset": 61,
+              "EndOffset": 63,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 30,
+              "Offset": 61,
+              "EndOffset": 79,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 2
+            }
+          ]
+        },
+        "System.Collections.Generic.List`1<FitVision.Services.TransformationRecord> FitVision.Services.HistoryService::GetUserHistory(System.String,System.Int32)": {
+          "Lines": {
+            "47": 5,
+            "48": 5,
+            "49": 0,
+            "51": 5,
+            "52": 2,
+            "54": 3,
+            "56": 3,
+            "57": 1,
+            "58": 1,
+            "59": 3,
+            "61": 3,
+            "62": 2,
+            "64": 1,
+            "65": 1
+          },
+          "Branches": [
+            {
+              "Line": 48,
+              "Offset": 27,
+              "EndOffset": 29,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 48,
+              "Offset": 27,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 5
+            },
+            {
+              "Line": 51,
+              "Offset": 54,
+              "EndOffset": 56,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 2
+            },
+            {
+              "Line": 51,
+              "Offset": 54,
+              "EndOffset": 72,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 3
+            },
+            {
+              "Line": 61,
+              "Offset": 173,
+              "EndOffset": 175,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 2
+            },
+            {
+              "Line": 61,
+              "Offset": 173,
+              "EndOffset": 186,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            },
+            {
+              "Line": 57,
+              "Offset": 17,
+              "EndOffset": 19,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 57,
+              "Offset": 17,
+              "EndOffset": 38,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Int32 FitVision.Services.HistoryService::ClearUserHistory(System.String)": {
+          "Lines": {
+            "69": 0,
+            "70": 0,
+            "71": 0,
+            "73": 0,
+            "75": 0,
+            "76": 0,
+            "78": 0,
+            "80": 0,
+            "81": 0,
+            "82": 0,
+            "83": 0,
+            "84": 0,
+            "86": 0,
+            "87": 0
+          },
+          "Branches": [
+            {
+              "Line": 70,
+              "Offset": 27,
+              "EndOffset": 29,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 70,
+              "Offset": 27,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 75,
+              "Offset": 87,
+              "EndOffset": 89,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 75,
+              "Offset": 87,
+              "EndOffset": 94,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 80,
+              "Offset": 143,
+              "EndOffset": 107,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 80,
+              "Offset": 143,
+              "EndOffset": 145,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Void FitVision.Services.HistoryService::SeedDatabase(FitVision.Services.TransformationRecord)": {
+          "Lines": {
+            "91": 0,
+            "92": 0,
+            "93": 0
+          },
+          "Branches": []
+        },
+        "System.Void FitVision.Services.HistoryService::.ctor()": {
+          "Lines": {
+            "19": 7
+          },
+          "Branches": []
+        }
+      }
+    }
+  }
+}
