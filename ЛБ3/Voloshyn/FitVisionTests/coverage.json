@@ -1,0 +1,218 @@
+{
+  "Voloshyn.dll": {
+    "C:\\Code\\University\\OPI\\FitVision-AI\\FitVision-AI\\ЛБ3\\Voloshyn\\Program.cs": {
+      "FitVisionAI.Services.TargetParameters": {
+        "System.Single FitVisionAI.Services.TargetParameters::get_DesiredWeight()": {
+          "Lines": {
+            "7": 17
+          },
+          "Branches": []
+        },
+        "System.Single FitVisionAI.Services.TargetParameters::get_BodyFatPercentage()": {
+          "Lines": {
+            "8": 13
+          },
+          "Branches": []
+        },
+        "System.Boolean FitVisionAI.Services.TargetParameters::ValidateData()": {
+          "Lines": {
+            "12": 6,
+            "14": 6,
+            "15": 2,
+            "18": 4,
+            "19": 2,
+            "21": 2,
+            "22": 2
+          },
+          "Branches": [
+            {
+              "Line": 14,
+              "Offset": 12,
+              "EndOffset": 14,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 5
+            },
+            {
+              "Line": 14,
+              "Offset": 12,
+              "EndOffset": 29,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 14,
+              "Offset": 32,
+              "EndOffset": 34,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 2
+            },
+            {
+              "Line": 14,
+              "Offset": 32,
+              "EndOffset": 50,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 4
+            },
+            {
+              "Line": 18,
+              "Offset": 61,
+              "EndOffset": 63,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 3
+            },
+            {
+              "Line": 18,
+              "Offset": 61,
+              "EndOffset": 78,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            },
+            {
+              "Line": 18,
+              "Offset": 81,
+              "EndOffset": 83,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 2
+            },
+            {
+              "Line": 18,
+              "Offset": 81,
+              "EndOffset": 99,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 2
+            }
+          ]
+        }
+      },
+      "FitVisionAI.Services.BasePhoto": {
+        "System.Boolean FitVisionAI.Services.BasePhoto::get_IsQualityGood()": {
+          "Lines": {
+            "27": 6
+          },
+          "Branches": []
+        },
+        "System.Boolean FitVisionAI.Services.BasePhoto::AnalyzeLighting()": {
+          "Lines": {
+            "30": 3,
+            "31": 3,
+            "32": 3
+          },
+          "Branches": []
+        }
+      },
+      "FitVisionAI.Services.AIGeneratorService": {
+        "System.Int32 FitVisionAI.Services.AIGeneratorService::get_DailyLimit()": {
+          "Lines": {
+            "37": 8
+          },
+          "Branches": []
+        },
+        "System.Int32 FitVisionAI.Services.AIGeneratorService::get_UsedRequests()": {
+          "Lines": {
+            "38": 14
+          },
+          "Branches": []
+        },
+        "System.Boolean FitVisionAI.Services.AIGeneratorService::CheckAvailableLimits(System.Int32)": {
+          "Lines": {
+            "42": 3,
+            "43": 3,
+            "44": 1,
+            "46": 2,
+            "47": 1,
+            "49": 1,
+            "50": 1
+          },
+          "Branches": [
+            {
+              "Line": 43,
+              "Offset": 10,
+              "EndOffset": 12,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 43,
+              "Offset": 10,
+              "EndOffset": 23,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 46,
+              "Offset": 42,
+              "EndOffset": 44,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 46,
+              "Offset": 42,
+              "EndOffset": 55,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.String FitVisionAI.Services.AIGeneratorService::GenerateTransformation(FitVisionAI.Services.BasePhoto,FitVisionAI.Services.TargetParameters)": {
+          "Lines": {
+            "54": 3,
+            "55": 3,
+            "56": 1,
+            "58": 2,
+            "59": 1,
+            "62": 1,
+            "65": 1,
+            "66": 1
+          },
+          "Branches": [
+            {
+              "Line": 55,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 55,
+              "Offset": 7,
+              "EndOffset": 25,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 58,
+              "Offset": 36,
+              "EndOffset": 38,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 58,
+              "Offset": 36,
+              "EndOffset": 49,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    }
+  }
+}
