@@ -4,25 +4,25 @@
       "FitVisionAI.Services.TargetParameters": {
         "System.Single FitVisionAI.Services.TargetParameters::get_DesiredWeight()": {
           "Lines": {
-            "7": 3
+            "7": 17
           },
           "Branches": []
         },
         "System.Single FitVisionAI.Services.TargetParameters::get_BodyFatPercentage()": {
           "Lines": {
-            "8": 3
+            "8": 13
           },
           "Branches": []
         },
         "System.Boolean FitVisionAI.Services.TargetParameters::ValidateData()": {
           "Lines": {
-            "12": 1,
-            "14": 1,
-            "15": 0,
-            "18": 1,
-            "19": 0,
-            "21": 1,
-            "22": 1
+            "12": 6,
+            "14": 6,
+            "15": 2,
+            "18": 4,
+            "19": 2,
+            "21": 2,
+            "22": 2
           },
           "Branches": [
             {
@@ -31,7 +31,7 @@
               "EndOffset": 14,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 1
+              "Hits": 5
             },
             {
               "Line": 14,
@@ -39,7 +39,7 @@
               "EndOffset": 29,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 0
+              "Hits": 1
             },
             {
               "Line": 14,
@@ -47,7 +47,7 @@
               "EndOffset": 34,
               "Path": 0,
               "Ordinal": 2,
-              "Hits": 0
+              "Hits": 2
             },
             {
               "Line": 14,
@@ -55,7 +55,7 @@
               "EndOffset": 50,
               "Path": 1,
               "Ordinal": 3,
-              "Hits": 1
+              "Hits": 4
             },
             {
               "Line": 18,
@@ -63,7 +63,7 @@
               "EndOffset": 63,
               "Path": 0,
               "Ordinal": 4,
-              "Hits": 1
+              "Hits": 3
             },
             {
               "Line": 18,
@@ -71,7 +71,7 @@
               "EndOffset": 78,
               "Path": 1,
               "Ordinal": 5,
-              "Hits": 0
+              "Hits": 1
             },
             {
               "Line": 18,
@@ -79,7 +79,7 @@
               "EndOffset": 83,
               "Path": 0,
               "Ordinal": 6,
-              "Hits": 0
+              "Hits": 2
             },
             {
               "Line": 18,
@@ -87,7 +87,7 @@
               "EndOffset": 99,
               "Path": 1,
               "Ordinal": 7,
-              "Hits": 1
+              "Hits": 2
             }
           ]
         }
@@ -95,15 +95,15 @@
       "FitVisionAI.Services.BasePhoto": {
         "System.Boolean FitVisionAI.Services.BasePhoto::get_IsQualityGood()": {
           "Lines": {
-            "27": 2
+            "27": 6
           },
           "Branches": []
         },
         "System.Boolean FitVisionAI.Services.BasePhoto::AnalyzeLighting()": {
           "Lines": {
-            "30": 1,
-            "31": 1,
-            "32": 1
+            "30": 3,
+            "31": 3,
+            "32": 3
           },
           "Branches": []
         }
@@ -111,23 +111,23 @@
       "FitVisionAI.Services.AIGeneratorService": {
         "System.Int32 FitVisionAI.Services.AIGeneratorService::get_DailyLimit()": {
           "Lines": {
-            "37": 2
+            "37": 8
           },
           "Branches": []
         },
         "System.Int32 FitVisionAI.Services.AIGeneratorService::get_UsedRequests()": {
           "Lines": {
-            "38": 3
+            "38": 14
           },
           "Branches": []
         },
         "System.Boolean FitVisionAI.Services.AIGeneratorService::CheckAvailableLimits(System.Int32)": {
           "Lines": {
-            "42": 1,
-            "43": 1,
-            "44": 0,
-            "46": 1,
-            "47": 0,
+            "42": 3,
+            "43": 3,
+            "44": 1,
+            "46": 2,
+            "47": 1,
             "49": 1,
             "50": 1
           },
@@ -138,7 +138,7 @@
               "EndOffset": 12,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 0
+              "Hits": 1
             },
             {
               "Line": 43,
@@ -146,7 +146,7 @@
               "EndOffset": 23,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 1
+              "Hits": 2
             },
             {
               "Line": 46,
@@ -154,7 +154,7 @@
               "EndOffset": 44,
               "Path": 0,
               "Ordinal": 2,
-              "Hits": 0
+              "Hits": 1
             },
             {
               "Line": 46,
@@ -168,14 +168,14 @@
         },
         "System.String FitVisionAI.Services.AIGeneratorService::GenerateTransformation(FitVisionAI.Services.BasePhoto,FitVisionAI.Services.TargetParameters)": {
           "Lines": {
-            "54": 0,
-            "55": 0,
-            "56": 0,
-            "58": 0,
-            "59": 0,
-            "62": 0,
-            "65": 0,
-            "66": 0
+            "54": 3,
+            "55": 3,
+            "56": 1,
+            "58": 2,
+            "59": 1,
+            "62": 1,
+            "65": 1,
+            "66": 1
           },
           "Branches": [
             {
@@ -184,7 +184,7 @@
               "EndOffset": 9,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 0
+              "Hits": 1
             },
             {
               "Line": 55,
@@ -192,7 +192,7 @@
               "EndOffset": 25,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 0
+              "Hits": 2
             },
             {
               "Line": 58,
@@ -200,7 +200,7 @@
               "EndOffset": 38,
               "Path": 0,
               "Ordinal": 2,
-              "Hits": 0
+              "Hits": 1
             },
             {
               "Line": 58,
@@ -208,7 +208,7 @@
               "EndOffset": 49,
               "Path": 1,
               "Ordinal": 3,
-              "Hits": 0
+              "Hits": 1
             }
           ]
         }
