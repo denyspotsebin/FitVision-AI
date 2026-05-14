@@ -10,10 +10,10 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v4
 
-    - name: Setup .NET 8
+    - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version:
+        dotnet-version: |
           8.0.x
           10.0.x
 
@@ -21,4 +21,7 @@ jobs:
       run: dotnet test "ЛБ3/Saribehian/FitVisionTests/FitVisionTests.csproj"
 
     - name: Run Voloshyn Tests
-      run: dotnet test "ЛБ3\Voloshyn\FitVisionTests\FitVisionTests.csproj"
+      run: dotnet test "ЛБ3/Voloshyn/FitVisionTests/FitVisionTests.csproj"
+
+    - name: Run Bondar Tests
+      run: dotnet test "ЛБ3/Bondar/FitVisionTests/FitVisionTests.csproj"
