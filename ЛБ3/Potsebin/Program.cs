@@ -157,6 +157,7 @@ namespace FitVisionAI_LB3
             return true;
         }
     }
+    
 
     /// <summary>
     /// Клас Користувача, що наслідує загальний Акаунт.

@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="FitVisionTests/FitVisionTests.csproj" />
+  <Project Path="Potsebin.csproj" />
+</Solution>
