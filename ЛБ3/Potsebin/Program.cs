@@ -74,9 +74,9 @@ namespace FitVisionAI_LB3
         /// <summary>
         /// Конструктор для створення нового профілю з прив'язкою до ID користувача.
         /// </summary>
-        public Profile(int id)
+        public Profile(int i)
         {
-            profileId = id;
+            profileId = i;
             createdAt = DateTime.Now;
         }
         /// <summary>
