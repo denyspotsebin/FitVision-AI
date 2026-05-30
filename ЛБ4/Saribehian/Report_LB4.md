@@ -7,7 +7,8 @@
 ---
 
 ## 1. Тема та мета лабораторної роботи
-**Тема:** Статичний аналіз коду, рефакторинг та інспектування коду (Code Review).
+**Тема:** Статичний аналіз коду, рефакторинг та інспектування коду (Code Review).  
+
 **Мета:** Отримати практичні навички проведення інспектування коду (Code Review) за індустріальними стандартами, виявлення "запахів коду" (code smells), виконання безпечного рефакторингу та регресійного тестування.
 
 ---
@@ -27,10 +28,12 @@
 
 ---
 
-## 3. Посилання на PR з коментарями Code Review
-* **Мій Pull Request для перевірки коду Дениса:** [https://github.com/denyspotsebin/FitVision-AI/pull/21]
-* **Pull Request, де перевіряли мій код:** [https://github.com/denyspotsebin/FitVision-AI/pull/22]
-* **Мій початковий код (ЛБ3):** [https://github.com/denyspotsebin/FitVision-AI/blob/main/ЛБ3/Saribehian/HistoryService.cs]
+## 3. Всі посилання 
+1. [Мій початковий код модуля (ЛБ3)](https://github.com/denyspotsebin/FitVision-AI/blob/main/ЛБ3/Saribehian/HistoryService.cs)
+2. [Мої початкові тести (ЛБ3)](https://github.com/denyspotsebin/FitVision-AI/tree/main/ЛБ3/Saribehian/FitVisionTests)
+3. [Код напарника (Дениса) для перевірки](https://github.com/denyspotsebin/FitVision-AI/blob/main/ЛБ3/Potsebin/Program.cs)
+4. [Pull Request (Моє Code Review для Дениса)](https://github.com/denyspotsebin/FitVision-AI/pull/21)
+5. [Pull Request (Де Роман перевіряв мене)](https://github.com/denyspotsebin/FitVision-AI/pull/22)
 
 ---
 
