@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
+// review
+
 namespace FitVision.Services
 {
     // Допоміжна модель для збереження даних (імітація таблиці БД)
