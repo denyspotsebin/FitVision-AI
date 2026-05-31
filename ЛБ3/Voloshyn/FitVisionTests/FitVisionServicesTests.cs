@@ -7,7 +7,6 @@ namespace FitVisionTests
     public class FitVisionServicesTests
     {
         // ТЕСТ 1: Позитивний сценарій валідації даних
-        // Покриває лише успішне повернення 'true', ігноруючи всі винятки.
         [Fact]
         public void ValidateData_ValidParameters_ReturnsTrue()
         {
@@ -22,12 +21,11 @@ namespace FitVisionTests
         }
 
         // ТЕСТ 2: Позитивний сценарій перевірки лімітів
-        // Пропускає гілки з некоректним ID та вичерпаним лімітом.
         [Fact]
         public void CheckAvailableLimits_UnderLimit_ReturnsTrue()
         {
             // Arrange
-            var service = new AIGeneratorService { UsedRequests = 0 };
+            var service = new AIGeneratorService(); // Прибрали { UsedRequests = 0 }, бо тепер private set (за замовчуванням 0)
 
             // Act
             bool result = service.CheckAvailableLimits(101);
@@ -49,25 +47,29 @@ namespace FitVisionTests
             // Assert
             Assert.True(result);
         }
+
         // --- Тести для TargetParameters.ValidateData (Межі та Винятки) ---
 
         [Fact]
-        public void ValidateData_WeightBelowLimit_ThrowsException()
+        public void ValidateData_WeightBelowLimit_ReturnsFalse()
         {
-            // BVA (Негативний): Вага на нижній межі (30)
+            // BVA (Негативний): Вага за нижньою межею (29.9)
             // Arrange
-            var parameters = new TargetParameters { DesiredWeight = 30.0f, BodyFatPercentage = 15.0f };
+            var parameters = new TargetParameters { DesiredWeight = 29.9f, BodyFatPercentage = 15.0f };
 
-            // Act & Assert
-            Assert.Throws<ArgumentOutOfRangeException>(() => parameters.ValidateData());
+            // Act
+            bool result = parameters.ValidateData();
+
+            // Assert
+            Assert.False(result); // Тепер метод повертає false замість винятку
         }
 
         [Fact]
         public void ValidateData_WeightAtLowerLimit_ReturnsTrue()
         {
-            // BVA (Позитивний): Вага трохи вище нижньої межі (30.1)
+            // BVA (Позитивний): Вага рівно на нижній межі (30.0 - тепер це валідно)
             // Arrange
-            var parameters = new TargetParameters { DesiredWeight = 30.1f, BodyFatPercentage = 15.0f };
+            var parameters = new TargetParameters { DesiredWeight = 30.0f, BodyFatPercentage = 15.0f };
 
             // Act
             bool result = parameters.ValidateData();
@@ -77,36 +79,45 @@ namespace FitVisionTests
         }
 
         [Fact]
-        public void ValidateData_WeightAboveLimit_ThrowsException()
+        public void ValidateData_WeightAboveLimit_ReturnsFalse()
         {
             // BVA (Негативний): Вага за верхньою межею (250.1)
             // Arrange
             var parameters = new TargetParameters { DesiredWeight = 250.1f, BodyFatPercentage = 15.0f };
 
-            // Act & Assert
-            Assert.Throws<ArgumentOutOfRangeException>(() => parameters.ValidateData());
+            // Act
+            bool result = parameters.ValidateData();
+
+            // Assert
+            Assert.False(result);
         }
 
         [Fact]
-        public void ValidateData_FatBelowLimit_ThrowsException()
+        public void ValidateData_FatBelowLimit_ReturnsFalse()
         {
             // BVA (Негативний): Відсоток жиру нижче межі (2.9)
             // Arrange
             var parameters = new TargetParameters { DesiredWeight = 70.0f, BodyFatPercentage = 2.9f };
 
-            // Act & Assert
-            Assert.Throws<ArgumentOutOfRangeException>(() => parameters.ValidateData());
+            // Act
+            bool result = parameters.ValidateData();
+
+            // Assert
+            Assert.False(result);
         }
 
         [Fact]
-        public void ValidateData_FatAboveLimit_ThrowsException()
+        public void ValidateData_FatAboveLimit_ReturnsFalse()
         {
             // BVA (Негативний): Відсоток жиру вище межі (50.1)
             // Arrange
             var parameters = new TargetParameters { DesiredWeight = 70.0f, BodyFatPercentage = 50.1f };
 
-            // Act & Assert
-            Assert.Throws<ArgumentOutOfRangeException>(() => parameters.ValidateData());
+            // Act
+            bool result = parameters.ValidateData();
+
+            // Assert
+            Assert.False(result);
         }
 
         // --- Тести для AIGeneratorService (Межі та Винятки) ---
@@ -125,9 +136,17 @@ namespace FitVisionTests
         [Fact]
         public void CheckAvailableLimits_LimitReached_ThrowsException()
         {
-            // BVA (Негативний): Ліміт вичерпано (UsedRequests = 5)
+            // BVA (Негативний): Ліміт вичерпано. Оскільки UsedRequests тепер private, генеруємо 5 разів вручну.
             // Arrange
-            var service = new AIGeneratorService { UsedRequests = 5 };
+            var service = new AIGeneratorService();
+            var photo = new BasePhoto { IsQualityGood = true };
+            var goals = new TargetParameters();
+
+            // Використовуємо всі 5 лімітів
+            for (int i = 0; i < 5; i++)
+            {
+                service.GenerateTransformation(photo, goals);
+            }
 
             // Act & Assert
             Assert.Throws<InvalidOperationException>(() => service.CheckAvailableLimits(1));
@@ -141,9 +160,10 @@ namespace FitVisionTests
             // EP (Негативний): Передача null замість об'єкта фото
             // Arrange
             var service = new AIGeneratorService();
+            BasePhoto? nullPhoto = null;
 
             // Act & Assert
-            Assert.Throws<ArgumentNullException>(() => service.GenerateTransformation(null, new TargetParameters()));
+            Assert.Throws<ArgumentNullException>(() => service.GenerateTransformation(nullPhoto!, new TargetParameters()));
         }
 
         [Fact]
@@ -154,6 +174,7 @@ namespace FitVisionTests
             var service = new AIGeneratorService();
             var photo = new BasePhoto { IsQualityGood = false };
 
+
             // Act & Assert
             Assert.Throws<ArgumentException>(() => service.GenerateTransformation(photo, new TargetParameters()));
         }
@@ -163,7 +184,7 @@ namespace FitVisionTests
         {
             // EP (Позитивний): Успішний сценарій генерації
             // Arrange
-            var service = new AIGeneratorService { UsedRequests = 0 };
+            var service = new AIGeneratorService(); // Прибрали UsedRequests = 0
             var photo = new BasePhoto { IsQualityGood = true };
 
             // Act
