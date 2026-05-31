@@ -19,7 +19,7 @@
 ![Фото доказ Code Review](Code_Review.png)
 
 ## 3. Посилання на власний код програми (ЛБ3)
-**Код до та після рефакторингу:** [посилання ]
+**Код до та після рефакторингу:** [(https://github.com/denyspotsebin/FitVision-AI/blob/feature/lb4/potsebin/%D0%9B%D0%913/Potsebin/Program.cs)]
 
 ## 4. Посилання на Pull Request з коментарями Code Review
 **PR із моїми inline-коментарями:** [(https://github.com/denyspotsebin/FitVision-AI/pull/18)]
