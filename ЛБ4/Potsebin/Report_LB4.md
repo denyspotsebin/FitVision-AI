@@ -103,7 +103,7 @@ if (fileSize > MaxFileSizeMb)
 
 **Відповідь ШІ:**
 > Цей фрагмент перевіряє наявність символів '@' та '.' за допомогою ручного циклу. Це працює, але є надлишковим. C# має оптимізовані методи рядків. Рекомендується використати метод `Contains`. Це зменшить цикломатичну складність і покращить читабельність.
-> ![Відповідь Copilot]([Copilot_answer_1.jpg])
-> ![Відповідь Copilot]([Copilot_answer_2.jpg])
 > Запропонований код: 
 > `if (!email.Contains('@') || !email.Contains('.')) { throw new FormatException("..."); }`
+![Відповідь Copilot](Copilot_answer_1.jpg)
+![Відповідь Copilot](Copilot_answer_2.jpg)
