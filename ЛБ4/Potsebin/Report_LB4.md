@@ -35,7 +35,7 @@ foreach (char c in email) {
     if (c == '@') hasAtSymbol = true;
     if (c == '.') hasDot = true;
 }
-if (!hasAtSymbol || !hasDot)
+if (!hasAtSymbol || !hasDot) ```
 **СТАЛО:**
 ```csharp
 if (!email.Contains('@') || !email.Contains('.'))
