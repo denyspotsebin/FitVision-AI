@@ -32,23 +32,14 @@ namespace FitVisionAI_LB3
         /// </summary>
         public bool Authenticate(string email, string pass)
         {
-            Console.WriteLine("[AuthService] Спроба авторизації...");
-            
             if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(pass))
-            {
                 throw new ArgumentException("Помилка: Email та пароль не можуть бути порожніми.");
-            }
 
             if (email == "user@fitvision.com" && pass == "qwerty")
-            {
-                Console.WriteLine("[AuthService] Успіх: Авторизація пройдена.");
                 return true;
-            }
-            
-            Console.WriteLine("[AuthService] Відмова: Невірні облікові дані.");
+
             return false;
         }
-
 
         /// <summary>
         /// Перевіряє чи відповідає наданий токен секретному ключу системи.
@@ -74,9 +65,9 @@ namespace FitVisionAI_LB3
         /// <summary>
         /// Конструктор для створення нового профілю з прив'язкою до ID користувача.
         /// </summary>
-        public Profile(int id)
+        public Profile(int i)
         {
-            profileId = id;
+            profileId = i;
             createdAt = DateTime.Now;
         }
         /// <summary>
@@ -87,13 +78,14 @@ namespace FitVisionAI_LB3
             Console.WriteLine($"[Profile] Профіль #{profileId} успішно оновлено.");
         }
     }
-    
+
     /// <summary>
     /// Клас для роботи з фотографіями користувача.
     /// Відповідає за валідацію метаданих (розмір, формат) та імітацію завантаження.
     /// </summary>
     public class Photo
     {
+        private const float MaxFileSizeMb = 15.0f;
         private string photoId;
         private string url;
         private float fileSize;
@@ -143,10 +135,8 @@ namespace FitVisionAI_LB3
                 throw new InvalidOperationException("Розмір файлу некоректний (0 або менше).");
             }
 
-            if (fileSize > 15.0f)
-            {
-                throw new Exception("Файл занадто великий. Обмеження: 15 МБ.");
-            }
+            if (fileSize > MaxFileSizeMb)
+                throw new Exception($"Файл занадто великий. Обмеження: {MaxFileSizeMb} МБ.");
 
             if (!url.EndsWith(".jpg") && !url.EndsWith(".png"))
             {
@@ -189,19 +179,8 @@ namespace FitVisionAI_LB3
         {
             Console.WriteLine("\n--- Старт реєстрації користувача ---");
             
-            bool hasAtSymbol = false;
-            bool hasDot = false;
-            
-            foreach (char c in email)
-            {
-                if (c == '@') hasAtSymbol = true;
-                if (c == '.') hasDot = true;
-            }
-
-            if (!hasAtSymbol || !hasDot)
-            {
-                throw new FormatException("Введено некоректний email. Реєстрацію скасовано.");
-            }
+            if (!email.Contains('@') || !email.Contains('.'))
+                throw new FormatException("Введено некоректний email.");
 
             passwordHash = "hashed_12345";
             UserProfile = new Profile(userId);

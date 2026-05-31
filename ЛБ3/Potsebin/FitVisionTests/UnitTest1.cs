@@ -187,7 +187,7 @@ namespace FitVisionTests
         [Fact]
         public void Upload_ValidPhoto_ReturnsTrue()
         {
-            var photo = new Photo("5", "test.jpg", 5.0f);
+            var photo = new Photo("5", "tet.jpg", 5.0f);
             bool result = photo.Upload();
             Assert.True(result);
         }
