@@ -201,7 +201,13 @@ if (photo == null)
 | Цикломатична складність (max) | `5` | `5` |
 | Тести (pass / total) | `13 / 13` | `13 / 13` |
 
-**StyleCop warnings після рефакторингу**
+**Складність за Lizard (ДО рефакторингу):**
+![Lizard до рефакторингу](./images/lizard-before.png)
+
+**Складність за Lizard (ПІСЛЯ рефакторингу):**
+![Lizard після рефакторингу](./images/lizard-after.png)
+
+**StyleCop warnings після рефакторингу:**
 ![StyleCop warnings після рефакторингу](./images/stylecop-after.png)
 
 ---
