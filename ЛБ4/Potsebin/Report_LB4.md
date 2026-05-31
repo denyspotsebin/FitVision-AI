@@ -35,10 +35,12 @@ foreach (char c in email) {
     if (c == '@') hasAtSymbol = true;
     if (c == '.') hasDot = true;
 }
-if (!hasAtSymbol || !hasDot) ```
+if (!hasAtSymbol || !hasDot)
+```
 **СТАЛО:**
 ```csharp
 if (!email.Contains('@') || !email.Contains('.'))
+```
 **ЧОМУ:** Ручний цикл неефективний і збільшує складність коду. Використання вбудованого методу Contains робить код коротшим, безпечнішим і легшим для розуміння.
 
 ### Операція 2: Усунення порушення SRP (Видалення Console.WriteLine)
@@ -50,11 +52,13 @@ if (email == "user@fitvision.com" && pass == "qwerty") {
     Console.WriteLine("[AuthService] Успіх: Авторизація пройдена.");
     return true;
 }
+```
 **СТАЛО:**
 ```csharp
 if (email == "user@fitvision.com" && pass == "qwerty") {
     return true;
 }
+```
 **ЧОМУ:** Класи бізнес-логіки не повинні відповідати за виведення повідомлень на екран (UI). Видалення цих викликів усуває порушення принципу єдиної відповідальності (SRP).
 
 ### Операція 3: Усунення Magic Numbers
@@ -63,14 +67,14 @@ if (email == "user@fitvision.com" && pass == "qwerty") {
 ```csharp
 if (fileSize > 15.0f)
     throw new Exception("Файл занадто великий. Обмеження: 15 МБ.");
-
+```
 **СТАЛО:**
 ```csharp
 private const float MaxFileSizeMb = 15.0f; // Оголошено на рівні класу
 
 if (fileSize > MaxFileSizeMb)
     throw new Exception($"Файл занадто великий. Обмеження: {MaxFileSizeMb} МБ.");
-
+```
 **ЧОМУ:** Жорстко закодовані числа ускладнюють підтримку коду. Винесення числа у константу полегшує його зміну в майбутньому (достатньо оновити значення лише в одному місці).
 
 ## 6. Звіт регресійного тестування та метрики
