@@ -33,6 +33,7 @@
 if (Weight < 20.0f || Weight > 350.0f)
     throw new ArgumentOutOfRangeException(nameof(Weight), "Вага має бути в межах від 20 до 350 кг.");
 ```
+
 **СТАЛО:**
 ```csharp
 public const float MinWeight = 20.0f;
@@ -43,6 +44,7 @@ public const float MaxWeight = 350.0f;
 if (Weight < MinWeight || Weight > MaxWeight)
     throw new ArgumentOutOfRangeException(nameof(Weight), $"Вага має бути в межах від {MinWeight} до {MaxWeight} кг.");
 ```
+
 **ЧОМУ:** Винесення жорстко закодованих значень у константи класу робить код самодокументованим і усуває дублювання значень у логіці перевірки та текстах помилок. Це значно спрощує підтримку та можливу зміну лімітів у майбутньому.
 
 ### Операція 2: Усунення Hardcoded Dependency (Генерація ідентифікатора)
@@ -56,6 +58,7 @@ var notification = new Notification
     IsSent = false
 };
 ```
+
 **СТАЛО:**
 ```csharp
 var notification = new Notification
@@ -65,6 +68,7 @@ var notification = new Notification
     IsSent = false
 };
 ```
+
 **ЧОМУ:** Використання `Random().Next()` зі штучним лімітом `10000` створювало високий ризик колізій ідентифікаторів. Заміна на використання `Guid` забезпечує надійну генерацію унікальних ID без жорсткої прив'язки до обмеженого магічного діапазону.
 
 ### Операція 3: Усунення Unnecessary Else (Спрощення маршрутизації)
@@ -82,14 +86,22 @@ else
     notification.IsSent = true;
 }
 ```
+
 **СТАЛО:**
 ```csharp
 bool pushSuccess = _notificationService.SendPush(user.UserId, formattedMsg);
+
 if (pushSuccess)
 {
     notification.IsSent = true;
     return notification;
 }
+
+notification.IsSent = _notificationService.SendEmail(user.UserId, formattedMsg);
+return notification;
+```
+
+**ЧОМУ:** Видалення зайвого блоку `else` за допомогою техніки раннього повернення (Guard Clause) зменшує рівень вкладеності коду. Це робить логіку виконання лінійною, більш передбачуваною та значно легшою для читання.
 
 ## 6. Звіт регресійного тестування та метрики
 
@@ -100,13 +112,14 @@ if (pushSuccess)
 * **Аналіз складності:** Цикломатична складність методу `ProcessAnalysisAndNotify` знизилася з 4 до 3 завдяки спрощенню умов та застосуванню Guard Clauses.
 
 ![Звіт регресійного тестування](Test_Prove.jpg)
+
 **Звіт лінтера StyleCop ДО**
+
 ![Звіт лінтера StyleCop ДО](Linter_Before.jpg)
+
 **Звіт лінтера StyleCop ПІСЛЯ**
-![Звіт лінтера StyleCop ПІСЛЯ](Linter_After.jpg)               
-notification.IsSent = _notificationService.SendEmail(user.UserId, formattedMsg);
-```
-**ЧОМУ:** Видалення зайвого блоку `else` за допомогою техніки раннього повернення (Guard Clause) зменшує рівень вкладеності коду. Це робить логіку виконання лінійною, більш передбачуваною та значно легшою для читання.
+
+![Звіт лінтера StyleCop ПІСЛЯ](Linter_After.jpg)
 
 ## 7. Підсумкова рефлексія
 
